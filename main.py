@@ -46,11 +46,11 @@ async def colorize_image_endpoint(file: UploadFile = File(...)):
 
         # Save the colorized image into a BytesIO object
         colorized_image_io = BytesIO()
-        colorized_image.save(colorized_image_io, format="PNG")
+        colorized_image.save(colorized_image_io, format="JPEG" ,quality=85)
         colorized_image_io.seek(0)  # Reset the stream position to the start
 
         # Return the colorized image as a streaming response
-        return StreamingResponse(colorized_image_io, media_type="image/png")
+        return StreamingResponse(colorized_image_io, media_type="image/jpeg")
 
     except Exception as e:
         # Handle any errors that occur during the process
