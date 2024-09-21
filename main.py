@@ -18,7 +18,7 @@ model = load_model(f"{BASE_DIR}/model/model.h5", compile=False)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # List your allowed origins here
+    allow_origins=["https://colorizerfrontend.vercel.app","http://colorizerfrontend.vercel.app"],  # List your allowed origins here
     allow_credentials=True,
     allow_methods=["*"],  # Allows all methods (GET, POST, etc.)
     allow_headers=["*"],  # Allows all headers
